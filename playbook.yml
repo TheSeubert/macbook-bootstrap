@@ -1,0 +1,6 @@
+---
+# setup macbook
+
+- hosts: macbook
+  roles:
+    - cli
