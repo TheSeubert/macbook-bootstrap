@@ -56,7 +56,7 @@ then
   pyenv global $PYTHON_VERSION
 fi
 
-display "Installing pip requirements"
-pip install --upgrade -r requirements.txt
+display "Installing Ansible"
+pip install --upgrade ansible boto
 
 # vim: ft=sh:
