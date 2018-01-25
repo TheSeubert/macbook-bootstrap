@@ -59,4 +59,9 @@ fi
 display "Installing Ansible"
 pip install --upgrade ansible boto
 
+if [ ! -d "$HOME/git/macbook-bootstrap" ];
+then
+  git clone https://github.com/dude051/macbook-bootstrap.git ${HOME}/git/macbook-bootstrap
+fi
+
 # vim: ft=sh:

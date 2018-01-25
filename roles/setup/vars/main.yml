@@ -1,0 +1,64 @@
+---
+# list of applications to install
+general:
+  local_home: "{{ lookup('env','HOME') }}"
+
+# homebrew applications
+applications:
+  - autojump
+  - autoconf
+  - automake
+  - cmake
+  - findutils
+  - git
+  - tree
+  - httpie
+  - curl
+  - wget
+  - kubectl
+  - kubernetes-helm
+  - zsh
+  - go
+  - vim
+  - neovim
+  - terraform
+  - awscli
+  - openssl
+  - freerdp
+  - gnu-sed
+  - gnu-tar
+  - gnupg
+  - hub
+  - jq
+  - openssh
+  - openssl@1.1
+  - md5sha1sum
+  - mas
+  - pwgen
+  - pyenv
+  - pyenv-virtualenv
+  - pyenv-virtualenvwrapper
+  - rbenv
+  - reattach-to-user-namespace
+  - rsync
+  - samba
+  - sqlite
+  - ssh-copy-id
+  - tmux
+  - xz
+  - zsh
+  - zsh-completions
+
+# homebrew cask applications
+cask_applications:
+  - xquartz
+  - atom
+  - chefdk
+  - google-chrome
+  - google-drive
+  - slack
+  - iterm2
+  - caffeine
+  - docker
+  - minikube
+  - 1password

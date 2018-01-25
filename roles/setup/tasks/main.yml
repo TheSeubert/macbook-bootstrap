@@ -1,0 +1,8 @@
+- name: homebrew installs
+  include: homebrew.yml
+
+- name: shell configuration
+  include: shell.yml
+
+- name: dotfiles
+  include: dotfiles.yml
