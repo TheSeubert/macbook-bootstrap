@@ -1,30 +1,19 @@
 ---
 # doing configuration
 
-- name: setting up zsh with oh-my-zsh
+- name: setting up zsh with ZIM
   git:
     repo: https://github.com/zimfw/zimfw.git
     dest: "{{general.local_home}}/.zim"
 
-- name: update ZIM
-  shell: zmanage update
-  args:
-    removes: "{{general.local_home}}/.zim"
-
-- name: getting dracula theme for oh-my-zsh
-  git:
-    repo: https://github.com/dracula/zsh.git
-    dest: "{{general.local_home}}/.oh-my-zsh_dracula_theme"
-
-- name: sym linking oh-my-zsh theme
-  file:
-    src: "{{general.local_home}}/.oh-my-zsh_dracula_theme/dracula.zsh-theme"
-    dest: "{{general.local_home}}/.oh-my-zsh/themes/dracula.zsh-theme"
-    state: link
-
 - name: create GOPATH directory
   file:
     path: "{{general.local_home}}/go"
+    state: directory
+
+- name: create nvim autoload directory
+  file:
+    path: "{{general.local_home}}/.local/share/nvim/site/autoload"
     state: directory
 
 - name: setting up vim-plug

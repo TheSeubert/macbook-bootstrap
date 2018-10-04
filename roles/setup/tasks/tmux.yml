@@ -1,0 +1,17 @@
+---
+# tmux specific configurations
+
+- name: create tmux directory
+  file:
+    dest: "{{general.local_home}}/.tmux"
+    state: directory
+
+- name: copy tmux config
+  copy:
+    src: files/tmux/tmux.conf
+    dest: "{{general.local_home}}/.tmux/"
+
+- name: clone tmux-plugin manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{general.local_home}}/.tmux/plugins/tpm"

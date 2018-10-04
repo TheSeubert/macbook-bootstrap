@@ -1,0 +1,57 @@
+Host home
+  Hostname home.dude051.com
+  User justin
+  Port 37629
+Host nas
+  Hostname nas.dude051.com
+  User justin
+  Port 22
+  ProxyCommand none
+Host *github.com
+  ProxyCommand none
+  Hostname github.com
+  IdentityFile ~/.ssh/id_github
+Host github.datapipe.net
+  ProxyCommand ssh -p 22 justin.seubert@x2go-dpmgmt-smq.datapipe.net nc %h %p
+  User justin.seubert
+  IdentityFile ~/.ssh/id_github_datapipe
+Host gitlab.projectmvp.xyz
+  IdentityFile ~/.ssh/id_github
+  ProxyCommand ssh -p 22 pbast nc %h %p
+Host *github.rackspace.com
+  ProxyCommand none
+  Hostname github.rackspace.com
+  User justin.seubert
+  IdentityFile ~/.ssh/id_github_rackspace
+Host 192.168.*
+    ProxyCommand none
+Host 172.16.0.*
+    ProxyCommand none
+Host localhost
+    ProxyCommand none
+Host 127.0.0.1
+    ProxyCommand none
+Host *-dpmgmt-*.datapipe.net
+    ProxyCommand none
+Host cbast
+  Hostname cbast.dfw1.corp.rackspace.net
+  # Hostname cbast.ord1.corp.rackspace.net
+  # Hostname cbast.iad3.corp.rackspace.net
+  User justin.seubert
+  ForwardAgent yes
+  ControlPath none
+Host pbast
+  Hostname pbast.ord1.corp.rackspace.net
+  # Hostname pbast.iad3.corp.rackspace.net
+  User justin.seubert
+  ForwardAgent yes
+  ControlPath none
+  StrictHostKeyChecking no
+Host !pbast !cbast *
+  ProxyCommand ssh -p 22 pbast nc %h %p
+  ServerAliveInterval 300
+  ControlMaster auto
+  ControlPath ~/.ssh/sock/%C
+  ControlPersist 10h
+  ForwardAgent yes
+  StrictHostKeyChecking no

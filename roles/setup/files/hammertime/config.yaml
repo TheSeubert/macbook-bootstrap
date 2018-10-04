@@ -1,0 +1,21 @@
+authentication:
+  gateway_auth: false
+  intensive_ad_become_root: true
+  username: justin.seubert
+  browser: chrome
+misc:
+  auto_exit: false
+  default_action: login
+  expect_sleep: 1
+  expect_timeout: 60
+  info_summary: true
+  show_passwords: true
+  use_autorun: false
+terminal:
+  bastionKeyFile: ~/.ssh/id_rsa
+  expect_path: /usr/bin/expect
+  max_concurrent_logins: 5
+  prompt: customer
+  show_motd: true
+  terminal: tmux
+  use_colors: true

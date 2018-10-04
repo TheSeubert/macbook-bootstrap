@@ -1,0 +1,17 @@
+---
+# vim specific configurations
+
+- name: create vim directory
+  file:
+    dest: "{{general.local_home}}/.vim"
+    state: directory
+
+- name: copy vim config
+  copy:
+    src: files/vim/vimrc
+    dest: "{{general.local_home}}/.vimrc"
+
+- name: clone Vundle manager
+  git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: "{{general.local_home}}/.vim/bundle/Vundle.vim"
