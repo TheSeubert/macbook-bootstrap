@@ -1,0 +1,20 @@
+---
+# SSH specific configurations
+
+- name: create ssh user directory
+  file:
+    path: "{{general.local_home}}/.ssh"
+    state: directory
+    mode: 0755
+
+- name: create ssh sock directory
+  file:
+    path: "{{general.local_home}}/.ssh/sock"
+    state: directory
+    mode: 0755
+
+- name: copy ssh config
+  copy:
+    src: files/ssh/config
+    dest: "{{general.local_home}}/.ssh/config"
+    mode: 0644

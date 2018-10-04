@@ -1,0 +1,17 @@
+- name: homebrew installs
+  include_tasks: homebrew.yml
+
+- name: shell configuration
+  include_tasks: shell.yml
+
+- name: ssh configuration
+  include_tasks: ssh.yml
+
+- name: MacOS defaults configuration
+  include_tasks: osx_defaults.yml
+
+- name: tmux configuration
+  include_tasks: tmux.yml
+
+- name: tmux configuration
+  include_tasks: vim.yml

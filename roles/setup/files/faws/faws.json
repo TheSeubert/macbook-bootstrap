@@ -1,0 +1,16 @@
+{
+  "accounts": {
+    "sandbox-nav": {
+      "rackspace_account": "979062",
+      "aws_account": "317691525304",
+      "aws_region": "us-east-1"
+    },
+    "onit-management": {
+      "rackspace_account": "790963",
+      "aws_account": "067899617571",
+      "aws_region": "us-east-1"
+    }
+  },
+  "janus_endpoints":null,
+  "support_services":null
+}

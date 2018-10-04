@@ -1,0 +1,66 @@
+#
+# User configuration sourced by interactive shells
+#
+
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+# Customize to your needs...
+
+# pyenv
+if [[ -n ${commands[pyenv]} ]];
+then
+    eval "$(pyenv init -)"
+    # Set up of virtualenvironments and projects
+    eval "$(pyenv virtualenv-init -)"
+    pyenv virtualenvwrapper
+    export PROJECT_HOME=~/Projects
+fi
+
+## rbenv
+if [[ -n ${commands[rbenv]} ]];
+then
+    eval "$(rbenv init -)"
+fi
+
+## go env
+if [[ -n ${commands[go]} ]];
+then
+  export GOPATH=~/go
+  export PATH=~/go/bin:$PATH
+fi
+
+## NVM
+export NVM_DIR="/Users/justin.seubert/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+## DVM
+[[ -s "$(brew --prefix dvm)/dvm.sh" ]] && source "$(brew --prefix dvm)/dvm.sh"
+
+## Bash auto-completion
+autoload bashcompinit && bashcompinit
+
+## google-cloud-sdk
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
+# source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
+
+## Aliases
+export RSAPROXY_USERNAME=justin.seubert
+alias rsabastion='RSAPROXY_GATEWAY=bastion-dfw.gateway.rackspace.com rsaproxy'
+alias rsagw='RSAPROXY_GATEWAY=auth.dfw1.gateway.rackspace.com rsaproxy'
+alias mas='reattach-to-user-namespace mas'
+alias amttool='docker run -it --rm --name amtterm amtterm'
+export FAWS_BIN_PATH=/usr/local/bin
+source ~/.faws-shell/faws.sh
+#eval $(/usr/libexec/path_helper -s)
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+#[[ -f /Users/justin.seubert/.nvm/versions/node/v8.7.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/justin.seubert/.nvm/versions/node/v8.7.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+#[[ -f /Users/justin.seubert/.nvm/versions/node/v8.7.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/justin.seubert/.nvm/versions/node/v8.7.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

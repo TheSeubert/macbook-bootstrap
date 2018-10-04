@@ -1,0 +1,7 @@
+---
+# install and update Atom packages with configurations
+
+- name: reinstall Atom packages
+  shell: 'apm install --packages-file packages.list'
+  args:
+    creates: /usr/local/bin/brew

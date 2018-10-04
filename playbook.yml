@@ -3,4 +3,4 @@
 
 - hosts: macbook
   roles:
-    - cli
+    - setup
